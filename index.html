@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/screen.css" />
+</head>
+<body>
+    <div>
+        <h1>Currency Exchange</h1>
+        <div>
+            <form action="">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount">
+                <label for="baseCurrency">From</label>
+                <select name="baseCurrency" id="baseCurrency">
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR" disabled>EUR - Euro</option>
+                    <option value="GBP">GBP</option>
+                    <option value="CAD">CAD</option>
+                    <option value="SEK">SEK</option>
+                </select>
+                
+                <label for="otherCurrency">To</label>
+                <select name="otherCurrency" id="otherCurrency">
+                    <option value="USD" disabled>USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP</option>
+                    <option value="CAD">CAD</option>
+                    <option value="SEK">SEK</option>
+                </select>
+                <p>1.00 US Dollars =</p>
+                <h3>0.858757 Euros</h3>
+                <p>1 EUR = 1.16447 USD</p>
+                <button>Convert</button>
+            </form>
+        </div>
+        <div>
+            <h2>USD to EUR Chart</h2>
+            <canvas height="200px" width="200px"></canvas>
+        </div>
+        <div>
+            <h2>Other exchange rates</h2>
+            <table>
+                <tr>
+                    <th>Currency</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>USD</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>EUR</td>
+                    <td>0.8622</td>
+                </tr>
+                <tr>
+                    <td>GBP</td>
+                    <td>0.7266</td>
+                </tr>
+                <tr>
+                    <td>CAD</td>
+                    <td>1.2384</td>
+                </tr>
+                <tr>
+                    <td>SEK</td>
+                    <td>8.6135</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
