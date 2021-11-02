@@ -4,73 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>Currency Exchange</title>
     <link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="css/screen.css" />
 </head>
 <body>
-    <div>
-        <h1>Currency Exchange</h1>
-        <div>
-            <form action="">
-                <label for="amount">Amount</label>
-                <input type="text" id="amount" name="amount">
-                <label for="baseCurrency">From</label>
-                <select name="baseCurrency" id="baseCurrency">
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="EUR" disabled>EUR - Euro</option>
-                    <option value="GBP">GBP</option>
-                    <option value="CAD">CAD</option>
-                    <option value="SEK">SEK</option>
-                </select>
-                
-                <label for="otherCurrency">To</label>
-                <select name="otherCurrency" id="otherCurrency">
-                    <option value="USD" disabled>USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="GBP">GBP</option>
-                    <option value="CAD">CAD</option>
-                    <option value="SEK">SEK</option>
-                </select>
-                <p>1.00 US Dollars =</p>
-                <h3>0.858757 Euros</h3>
-                <p>1 EUR = 1.16447 USD</p>
-                <button>Convert</button>
+    <section class="o-row o-row--lg o-row--login o-row--beta">
+        <div class="o-container u-max-width-xs">
+            <form class="c-card" action="#">
+                <div class="c-card__body">
+                    <h2 class="c-card__title">
+                        Currency Exchange
+                    </h2>           
+                    <div class="o-section">
+                        <p class="c-form-field">
+                            <label class="c-label" for="amount">Amount</label>
+                            <input class="c-input" type="text" id="amount" name="amount">
+                        </p> 
+                        <p class="c-form-field">
+                            <label class="c-label" for="baseCurrency">
+                                From
+                            </label>
+                                <span class="c-custom-select">
+                                <select class="c-input c-custom-select__input" name="baseCurrency" id="baseCurrency">
+                                    <option value="USD" selected>USD - US Dollar</option>
+                                    <option value="EUR" >EUR - Euro</option>
+                                    <option value="GBP">GBP - Pound Sterling</option>
+                                    <option value="JPY">JPY - Japanese Yen</option>
+                                    <option value="CAD">CAD - Canadian Dollar</option>
+                                </select>
+                                <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path d="M7,10l5,5,5-5Z" />
+                                </svg>
+                            </span>
+                        </p>   
+                            <button class="c-swap">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                                    <path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/>
+                                </svg>
+                            </button>
+                            <p class="c-form-field">
+                                <label class="c-label" for="otherCurrency">
+                                    To
+                                </label>
+                                <span class="c-custom-select">
+                                    <select class="c-input c-custom-select__input" name="otherCurrency" id="otherCurrency">
+                                        <option value="USD" >USD - US Dollar</option>
+                                        <option value="EUR" selected>EUR - Euro</option>
+                                        <option value="GBP">GBP - Pound Sterling</option>
+                                        <option value="JPY">JPY - Japanese Yen</option>
+                                        <option value="CAD">CAD - Canadian Dollar</option>
+                                    </select>
+                                    <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path d="M7,10l5,5,5-5Z" />
+                                    </svg>
+                                </span>
+                            </p>
+                            <div class="c-result">
+                                <p class="c-amount-entered">2.00 US Dollars =</p>
+                                <p class="c-amount-result">1.72<span>43169</span> Euros</p>
+                            </div>
+                            <p>
+                                <input class="o-button-reset c-button u-mb-md" type="submit" value="Convert">
+                            </p>
+                        
+                    </div>
+                </div>
             </form>
+            <div class="c-card">
+                <div class="c-card__body">
+                    <h2 class="c-card__title">
+                        USD to EUR Chart
+                    </h2>
+                    <canvas height="200px" width="200px"></canvas>
+                </div>
+                
+            </div>
+            <div class="c-card">
+                <div class="c-card__body">
+                    <h2 class="c-card__title">
+                        Other exchange rates
+                    </h2>
+                    <table>
+                        <tr>
+                            <th>Currency</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>USD</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>EUR</td>
+                            <td>0.8622</td>
+                        </tr>
+                        <tr>
+                            <td>GBP</td>
+                            <td>0.7266</td>
+                        </tr>
+                        <tr>
+                            <td>JPY</td>
+                            <td>113.79171</td>
+                        </tr>
+                        <tr>
+                            <td>CAD</td>
+                            <td>1.2384</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div>
-            <h2>USD to EUR Chart</h2>
-            <canvas height="200px" width="200px"></canvas>
-        </div>
-        <div>
-            <h2>Other exchange rates</h2>
-            <table>
-                <tr>
-                    <th>Currency</th>
-                    <th>Amount</th>
-                </tr>
-                <tr>
-                    <td>USD</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>EUR</td>
-                    <td>0.8622</td>
-                </tr>
-                <tr>
-                    <td>GBP</td>
-                    <td>0.7266</td>
-                </tr>
-                <tr>
-                    <td>CAD</td>
-                    <td>1.2384</td>
-                </tr>
-                <tr>
-                    <td>SEK</td>
-                    <td>8.6135</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+    </section>
 </body>
 </html>
